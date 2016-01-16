@@ -1,0 +1,4 @@
+package = bin/dir
+file = src/log/debug/dirlog.txt
+level = warning
+handler = file, email

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configs>
+	<conf id="1">
+		<package>bin/dir</package>
+		<logfile>src/log/debug/dirlog.txt</logfile>
+		<level>warning</level>
+		<handlers>file, email</handlers>
+	</conf>
+</configs>

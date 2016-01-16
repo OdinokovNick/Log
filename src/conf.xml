@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configs>
+	<conf id="1">
+		<package>bin/dir</package>
+		<logfile>src/log/debug/dirlog.txt</logfile>
+		<level>warning</level>
+		<handlers>file, email</handlers>
+	</conf>
+	<conf id="2">
+		<package>bin</package>
+		<logfile>src/log/debug/binlog.txt</logfile>
+		<level>info</level>
+		<handlers>file</handlers>
+	</conf>
+	<conf id="3">
+		<package>bin/dir/test</package>
+		<logfile>src/log/debug/testlog.txt</logfile>
+		<level>warning</level>
+		<handlers>file, email, html</handlers>
+	</conf>
+</configs>

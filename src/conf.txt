@@ -1,0 +1,15 @@
+package = bin/dir
+file = src/log/debug/dirlog.txt
+level = warning
+handler = file, email
+
+package = bin
+file = src/log/debug/binlog.txt
+level = info
+handler = file
+
+package = bin/dir/test
+file = src/log/debug/testlog.txt
+level = warning
+handler = file, email, html
+#shdfjshf 

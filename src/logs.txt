@@ -1,0 +1,12 @@
+WARNING Test.class new message Wed Nov 14 15:00:28 MSK 2012<br>
+WARNING Test.class 123 Wed Nov 14 15:00:28 MSK 2012<br>
+WARNING Test.class ololo Wed Nov 14 15:00:28 MSK 2012<br>
+WARNING Test.class error java.lang.Exception Wed Nov 14 15:00:28 MSK 2012<br>
+WARNING Test.class new message Wed Nov 14 15:00:28 MSK 2012<br>123<br>
+WARNING Test.class new message Wed Nov 14 15:00:28 MSK 2012<br>123<br>
+WARNING Test.class new message Wed Nov 14 15:00:28 MSK 2012<br>123<br>
+WARNING Test.class new message Wed Nov 14 15:00:28 MSK 2012<br>123<br>
+WARNING Test.class new message Wed Nov 14 15:00:28 MSK 2012<br>123<br>
+WARNING Test.class new message Wed Nov 14 15:00:28 MSK 2012<br>123<br>
+123<br>
+123<br>

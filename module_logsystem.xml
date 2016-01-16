@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_logsystem" default="compile.module.logsystem">
+  <dirname property="module.logsystem.basedir" file="${ant.file.module_logsystem}"/>
+  
+  <property name="module.jdk.home.logsystem" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.logsystem" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.logsystem" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.logsystem" value="-encoding windows-1251 -source 1.6 ${compiler.args}"/>
+  
+  <property name="logsystem.output.dir" value="${module.logsystem.basedir}/out/production/logsystem"/>
+  <property name="logsystem.testoutput.dir" value="${module.logsystem.basedir}/out/test/logsystem"/>
+  
+  <path id="logsystem.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="logsystem.module.production.classpath">
+    <path refid="${module.jdk.classpath.logsystem}"/>
+    <path refid="library.junit-4.11-snapshot1.classpath"/>
+    <path refid="library.mail.classpath"/>
+    <path refid="library.mail1.classpath"/>
+    <path refid="library.mail2.classpath"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.junit-4.11-snapshot.classpath"/>
+  </path>
+  
+  <path id="logsystem.runtime.production.module.classpath">
+    <pathelement location="${logsystem.output.dir}"/>
+    <path refid="library.junit-4.11-snapshot1.classpath"/>
+    <path refid="library.mail.classpath"/>
+    <path refid="library.mail1.classpath"/>
+    <path refid="library.mail2.classpath"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.junit-4.11-snapshot.classpath"/>
+  </path>
+  
+  <path id="logsystem.module.classpath">
+    <path refid="${module.jdk.classpath.logsystem}"/>
+    <pathelement location="${logsystem.output.dir}"/>
+    <path refid="library.junit-4.11-snapshot1.classpath"/>
+    <path refid="library.mail.classpath"/>
+    <path refid="library.mail1.classpath"/>
+    <path refid="library.mail2.classpath"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.junit-4.11-snapshot.classpath"/>
+  </path>
+  
+  <path id="logsystem.runtime.module.classpath">
+    <pathelement location="${logsystem.testoutput.dir}"/>
+    <pathelement location="${logsystem.output.dir}"/>
+    <path refid="library.junit-4.11-snapshot1.classpath"/>
+    <path refid="library.mail.classpath"/>
+    <path refid="library.mail1.classpath"/>
+    <path refid="library.mail2.classpath"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.junit-4.11-snapshot.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.logsystem">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.logsystem">
+    <patternset refid="excluded.from.module.logsystem"/>
+  </patternset>
+  
+  <path id="logsystem.module.sourcepath">
+    <dirset dir="${module.logsystem.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.logsystem" depends="compile.module.logsystem.production,compile.module.logsystem.tests" description="Compile module logsystem"/>
+  
+  <target name="compile.module.logsystem.production" depends="register.custom.compilers" description="Compile module logsystem; production classes">
+    <mkdir dir="${logsystem.output.dir}"/>
+    <javac2 destdir="${logsystem.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.logsystem}/javac">
+      <compilerarg line="${compiler.args.logsystem}"/>
+      <bootclasspath refid="logsystem.module.bootclasspath"/>
+      <classpath refid="logsystem.module.production.classpath"/>
+      <src refid="logsystem.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.logsystem"/>
+    </javac2>
+    
+    <copy todir="${logsystem.output.dir}">
+      <fileset dir="${module.logsystem.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.logsystem.tests" depends="register.custom.compilers,compile.module.logsystem.production" description="compile module logsystem; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.logsystem" description="cleanup module">
+    <delete dir="${logsystem.output.dir}"/>
+    <delete dir="${logsystem.testoutput.dir}"/>
+  </target>
+</project>
